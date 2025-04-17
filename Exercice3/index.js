@@ -1,8 +1,16 @@
-// Créez votre fonction ici
+/** 🕵️
+ * 
+ * Takes an array of numbers as argument, calculates the sum of the values, 
+ * 
+ * then returns the average.
+ *
+ * @param {number[]} numberArray - Array of numbers
+ * @return {number|undefined} The average of the values, or undefined if invalid input
+ */
+const calculateAverage = (numberArray) => {
+    if(!Array.isArray(numberArray)) return console.error('No numbers to calculate average');
 
-// Exemples d'utilisation de la fonction
-console.log(calculateAverage([5, 10, 15])) // retourne 10
-console.log(calculateAverage([10, 20, 30, 20])) // retourne 20
-console.log(calculateAverage()) // No numbers to calculate average
-
-export default calculateAverage
+    let sum = 0;
+    numberArray.map(i => sum = sum + i);
+    return sum / numberArray.length;
+};

@@ -9,15 +9,16 @@
  * @param {string} operator string for operators '+', '-', '*', '/' or '%'
  * @return {number} value of the operation
  */
-export const calculate = (firstTerm, secondTerm, operator) => {
-    if(typeof firstTerm !== 'number' || typeof secondTerm !== 'number') return console.error(`@calculate\n The first term '${firstTerm}' or second term '${secondTerm}' is not a number.`);
-    if(!['+', '-', '*', '/', '%'].includes(operator)) return console.error(`@calculate\n The operator '${operator}' is not valid.`);
+const calculate = (firstTerm, secondTerm, operator) => {
+    if(!['+', '-', '*', '/', '%'].includes(operator)) return 'Invalid operator';
 
     switch(operator){
-        case '+': return firstTerm + secondTerm;
-        case '-': return firstTerm - secondTerm;
-        case '*': return firstTerm * secondTerm;
-        case '/': return secondTerm === 0 ? console.error("Division by zero is not allowed") : firstTerm / secondTerm;
-        case '%': return firstTerm < secondTerm ? console.error("Invalid operator") : firstTerm % secondTerm;
+        case '+': return Number(firstTerm) + Number(secondTerm);
+        case '-': return Number(firstTerm) - Number(secondTerm);
+        case '*': return Number(firstTerm) * Number(secondTerm);
+        case '/': return Number(secondTerm) === 0 ? 'Division by zero is not allowed' : Number(firstTerm) / Number(secondTerm);
+        case '%': return Number(firstTerm) < Number(secondTerm) || operator !== '%' ? 'Invalid operator' : Number(firstTerm) % Number(secondTerm);
     };
 };
+
+export default calculate;

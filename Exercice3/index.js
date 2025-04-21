@@ -1,9 +1,8 @@
-/** 🕵️
- * 
- * Takes an array of numbers as argument, calculates the sum of the values, 
+/** - - -
+ * 🕵️ Takes an array of numbers as argument, calculates the sum of the values, 
  * 
  * then returns the average.
- *
+ * - - -
  * @param {number[]} numberArray - Array of numbers
  * @return {number|undefined} The average of the values, or undefined if invalid input
  */

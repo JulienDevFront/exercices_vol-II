@@ -1,9 +1,8 @@
-/** 🕵️
- * 
- * Performs a basic arithmetic operation on two numbers. Takes two numeric values and an operator, 
+/** - - -
+ * 🕵️ Performs a basic arithmetic operation on two numbers. Takes two numeric values and an operator, 
  * 
  * then returns the result of the  operation according  to the given operator.
- * 
+ * - - -
  * @param {number} firstTerm first value for operation
  * @param {number} secondTerm second value for operation
  * @param {string} operator string for operators '+', '-', '*', '/' or '%'

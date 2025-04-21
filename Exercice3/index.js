@@ -8,9 +8,11 @@
  * @return {number|undefined} The average of the values, or undefined if invalid input
  */
 const calculateAverage = (numberArray) => {
-    if(!Array.isArray(numberArray)) return console.error('No numbers to calculate average');
+    if(!Array.isArray(numberArray)) return 'No numbers to calculate average';
 
     let sum = 0;
     numberArray.map(i => sum = sum + i);
     return sum / numberArray.length;
 };
+
+export default calculateAverage;

@@ -11,9 +11,11 @@
  * @return {string} the even numbers 
  *
  */
-export const pairNumbers = (min, max) => {
-    if(typeof min !== 'number' || typeof max !== 'number') return console.error(`@pairNumbers\n the value '${min}' or '${max}' is not of type Number.`);
+const pairNumbers = (min, max) => {
     const evenNumbers = [];
-    for(let i = min ; i <= max ; i++) if(i % 2 === 0) evenNumbers.push(i);
+    for(let i = Number(min) ; i <= Number(max) ; i++) if(i % 2 === 0) evenNumbers.push(i);
     return evenNumbers.toString();
 };
+
+export default pairNumbers;
+

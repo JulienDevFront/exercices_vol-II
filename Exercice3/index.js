@@ -9,9 +9,11 @@
 const calculateAverage = (numberArray) => {
     if(!Array.isArray(numberArray)) return 'No numbers to calculate average';
 
-    let sum = 0;
-    numberArray.map(i => sum = sum + i);
-    return sum / numberArray.length;
+    return numberArray.reduce((sum, value, index) => {
+        const total = sum + value
+
+        return index === numberArray.length - 1 ? total / numberArray.length : total
+    }, 0)
 };
 
 export default calculateAverage;

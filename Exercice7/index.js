@@ -7,13 +7,21 @@ function convertToBinary() {
     const decimalInput = document.getElementById('decimalInput').value;
     const binaryResult = document.getElementById('binaryResult');
 
-    const decimalNumber = Number(decimalInput);
-
-    if (isNaN(decimalNumber)) {
+    let number = Number(decimalInput);
+    
+    if (isNaN(number) || decimalInput.trim() === '') {
         binaryResult.textContent = '';
         return;
     };
+    
+    let binaries = [];
 
-    const binary = decimalNumber.toString(2);
-    binaryResult.textContent = binary;
+    while (number > 0) {
+        const binary = number % 2;      
+        binaries.push(binary);         
+        number = Math.floor(number / 2);   
+    }
+
+    if (binaries.length === 0) binaryResult.textContent = '0';
+    else binaryResult.textContent = binaries.reverse().join('');
 };
